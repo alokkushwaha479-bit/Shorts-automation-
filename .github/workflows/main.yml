@@ -1,0 +1,22 @@
+name: Shorts Automation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show workflow status
+        run: |
+          echo "Shorts Automation cloud workflow started"
+          echo "Next step: connect video generation and YouTube upload"
+          
